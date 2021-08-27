@@ -26,26 +26,29 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0...14:
             numberOnScreen.append(sender.currentTitle!)
+            updateScreen()
         case 15:
             for (key, value) in mathOperators{
-                formatedNumber = numberOnScreen.replacingOccurrences(of: key, with: value)
+                numberOnScreen = numberOnScreen.replacingOccurrences(of: key, with: value)
             }
             
-            let expresion = NSExpression(format: (formatedNumber))
-            let result = expresion.expressionValue(with: nil, context: nil) ?? 0
+            let expresion = NSExpression(format: (numberOnScreen))
+            let result = expresion.expressionValue(with: nil, context: nil) ?? 0 as Double
             numberOnScreen = "\(result)"
             updateScreen()
-            
         case 16:
             numberOnScreen = ""
+            updateScreen(true)
         default:
             fatalError("Unknown button tag")
         }
-        
-        updateScreen()
     }
     
-    func updateScreen() {
+    func updateScreen(_ override: Bool = false) {
         resultNumber.text = numberOnScreen
+        
+        if(override){
+            resultNumber.text = "0"
+        }
     }
 }
