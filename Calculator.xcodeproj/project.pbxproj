@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		AFB9373426D31F9E00A99B08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB9373226D31F9E00A99B08 /* LaunchScreen.storyboard */; };
 		AFB9373F26D31F9F00A99B08 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB9373E26D31F9F00A99B08 /* CalculatorTests.swift */; };
 		AFB9374A26D31FA000A99B08 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB9374926D31FA000A99B08 /* CalculatorUITests.swift */; };
+		AFEF0B5F26DC220100AE6234 /* MathParser in Frameworks */ = {isa = PBXBuildFile; productRef = AFEF0B5E26DC220100AE6234 /* MathParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEF0B5F26DC220100AE6234 /* MathParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,9 @@
 			dependencies = (
 			);
 			name = Calculator;
+			packageProductDependencies = (
+				AFEF0B5E26DC220100AE6234 /* MathParser */,
+			);
 			productName = Calculator;
 			productReference = AFB9372426D31F9200A99B08 /* Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = AFB9371B26D31F9200A99B08;
+			packageReferences = (
+				AFEF0B5D26DC220100AE6234 /* XCRemoteSwiftPackageReference "DDMathParser" */,
+			);
 			productRefGroup = AFB9372526D31F9200A99B08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -587,6 +595,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AFEF0B5D26DC220100AE6234 /* XCRemoteSwiftPackageReference "DDMathParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davedelong/DDMathParser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFEF0B5E26DC220100AE6234 /* MathParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFEF0B5D26DC220100AE6234 /* XCRemoteSwiftPackageReference "DDMathParser" */;
+			productName = MathParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AFB9371C26D31F9200A99B08 /* Project object */;
 }
